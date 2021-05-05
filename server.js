@@ -11,10 +11,14 @@ app.use(bodyPrser.json());
 app.use(express.static('./assets'));
 app.use(passport.initialize());
 
-import authorize from './src/_middleware/autorize.js';
+import routes from './src/routes/routes.js';
+app.use('/', routes);
 
-import router from './src/routes/user.route.js';
-app.use('/users', router);
+import userRouter from './src/routes/user.route.js';
+app.use('/users', userRouter);
+
+// import oeuvreRoute from './src/routes/oeuvre.route.js';
+// app.use('/', oeuvreRoute);
 
 
 app.get('/', (req, res) => res.send('Hello my World'));

@@ -1,14 +1,15 @@
+// const config = require('config.json');
+// const jwt = require('jsonwebtoken');
+// const bcrypt = require('bcryptjs');
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../models/user.model.js';
 import config from '../configs/config.js';
 
-
 // authentificate : login
 export async function login({ email, password }) {
   const user = await User.findOne({ where: { email } });
-  if (!user || !(await bcrypt.compare(password, user.hash)))
-    throw 'Username or password is incorrect';
+  if (!user || !(await bcrypt.compare(password, user.hash))) throw 'Username or password is incorrect';
   // authentication successful
   const token = jwt.sign({ sub: user.id }, config.secret, { expiresIn: '7d' });
   //  return { ...omitHash(user.get()), token };
@@ -46,14 +47,13 @@ export async function create(params) {
   await User.create(params);
 }
 
-
 // update 
 // *******************
 export async function update(id, params) {
   const user = await getUser(id);
   // validate
   const usernameChanged = params.username && user.username !== params.username;
-  if (usernameChanged && await User.findOne({ where: { username: params.username } })) {
+  if (usernameChanged && (await User.findOne({ where: { username: params.username } }))) {
     throw 'Username "' + params.username + '" is already taken';
   }
   // hash password if it was entered
@@ -85,4 +85,5 @@ function omitHash(user) {
   return userWithoutHash;
 }
 
-export default {}
+export default {};
+//# sourceMappingURL=user.service.js.map
