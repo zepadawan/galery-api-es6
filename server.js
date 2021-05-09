@@ -14,25 +14,12 @@ app.use(passport.initialize());
 import routes from './src/routes/routes.js';
 app.use('/', routes);
 
-import userRouter from './src/routes/user.route.js';
-app.use('/users', userRouter);
-
-// import oeuvreRoute from './src/routes/oeuvre.route.js';
-// app.use('/', oeuvreRoute);
-
 
 app.get('/', (req, res) => res.send('Hello my World'));
 let port = config.server.portServer || 4000;
 //create a server
-var server = app.listen(port, function () {
-  var host = config.server.portServer;
-  var port = config.server.host;
-  console.log(`App listening at http:// ${port} : ${host} `);
+var server = app.listen(port, function() {
+    var host = config.server.portServer;
+    var port = config.server.host;
+    console.log(`App listening at http:// ${port} : ${host} `);
 });
-
-
-
-
-
-
-

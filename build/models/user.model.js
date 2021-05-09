@@ -1,7 +1,7 @@
 import Sequelize from "sequelize";
 import sequelize from '../configs/db-config.js';
 
-const User = sequelize.define('admin', {
+const User = sequelize.define('user', {
   firstname: { type: Sequelize.STRING, allowNull: true },
   lastname: { type: Sequelize.STRING, allowNull: true },
   username: { type: Sequelize.STRING, allowNull: true },
