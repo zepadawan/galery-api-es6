@@ -5,7 +5,7 @@ import sequelize from '../configs/db-config.js';
 const Oeuvre = sequelize.define(
     'oeuvre', {
         nom: { type: Sequelize.STRING, allowNull: false },
-        category: { type: Sequelize.STRING, allowNull: true },
+        id_category: { type: Sequelize.INTEGER, allowNull: true },
         nom_image: { type: Sequelize.STRING, allowNull: true },
         prix: { type: Sequelize.STRING, allowNull: false },
         description: { type: Sequelize.STRING, allowNull: true },

@@ -3,7 +3,6 @@ import jwt from 'jsonwebtoken';
 import User from '../models/user.model.js';
 import config from '../configs/config.js';
 
-
 // authentificate : login
 export async function login({ email, password }) {
     const user = await User.findOne({ where: { email } });

@@ -4,9 +4,7 @@ const router = express.Router();
 
 import { getAllUsers, getUserById, loginUser, registerUser, updateUser, deleteUser } from '../controllers/user.controller.js';
 import { getAllOeuvres } from '../controllers/oeuvre.controller.js';
-
 import { getAllCategories, getCategorieById } from '../controllers/oeuvre_categorie.controller.js'
-
 
 // Users
 router.get('/users/get', authorize(), getAllUsers);
@@ -20,7 +18,7 @@ router.delete('/users/:id', deleteUser);
 router.get('/oeuvres/get', getAllOeuvres);
 
 // Categories des oeuvres
-router.get('/categories/get', getAllCategories);
+router.get('/categories', getAllCategories);
 router.get('/categories/:id', getCategorieById);
 
 

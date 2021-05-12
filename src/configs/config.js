@@ -8,7 +8,7 @@ const userRoles = {
 const config = {
 
     server: {
-        portServer: 3500,
+        portServer: 3000,
         host: 'localhost',
     },
 
