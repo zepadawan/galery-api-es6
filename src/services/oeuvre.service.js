@@ -16,7 +16,12 @@ export async function getById(id) {
     return await getOeuvre(id);
 }
 
+// Creation d'une Oeuvre
+// *******************
+export async function create(req, res, next) {
+    return await Oeuvre.create(req, res, next);
 
+}
 
 // helper functions
 async function getOeuvre(id) {

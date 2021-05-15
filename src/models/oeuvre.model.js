@@ -7,11 +7,11 @@ const Oeuvre = sequelize.define(
         nom: { type: Sequelize.STRING, allowNull: false },
         id_category: { type: Sequelize.INTEGER, allowNull: true },
         nom_image: { type: Sequelize.STRING, allowNull: true },
-        prix: { type: Sequelize.STRING, allowNull: false },
+        prix: { type: Sequelize.STRING, allowNull: true },
         description: { type: Sequelize.STRING, allowNull: true },
         dimension: { type: Sequelize.STRING, allowNull: true },
         annee_creation: { type: Sequelize.STRING, allowNull: true },
-        a_vendre: { type: Sequelize.INTEGER, allowNull: false },
+        a_vendre: { type: Sequelize.INTEGER, allowNull: true },
 
     },
 )

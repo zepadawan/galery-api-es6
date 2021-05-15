@@ -10,7 +10,7 @@ export function getAllCategories(req, res, next) {
 }
 
 export function getCategorieById(req, res, next) {
-    getById()
+    return getById(req.params.id)
         .then(oeuvre_Categorie => res.json({
             status: 200,
             args: oeuvre_Categorie,
